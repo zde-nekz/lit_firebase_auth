@@ -2,6 +2,7 @@ name: lit_firebase_auth
 description: Pre-lit Firebase Authentication. Drop in and add Firebase Auth in just minutes.
 repository: https://github.com/funwithflutter/lit_firebase_auth
 homepage: https://github.com/funwithflutter/lit_firebase_auth
+publish_to: 'none'
 
 version: 0.3.1
 
@@ -25,7 +26,9 @@ dependencies:
   state_notifier: ^0.7.1
   flutter_state_notifier: ^0.7.1
   # ui
-  flushbar: ^1.10.4
+  flushbar:
+    git:
+      url: https://github.com/zde-nekz/flushbar.git
 
 dev_dependencies:
   flutter_test:
