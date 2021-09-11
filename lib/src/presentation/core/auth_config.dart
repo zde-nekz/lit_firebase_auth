@@ -23,11 +23,11 @@ abstract class AuthConfig with _$AuthConfig {
 }
 
 class TextFieldConfig {
-  final TextStyle style;
+  final TextStyle? style;
   final InputDecoration inputDecoration;
 
   TextFieldConfig({
-    required this.style,
+    this.style,
     required this.inputDecoration,
   });
 }
