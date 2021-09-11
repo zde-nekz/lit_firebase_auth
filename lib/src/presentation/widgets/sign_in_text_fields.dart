@@ -11,13 +11,13 @@ final border = OutlineInputBorder(
 
 class PasswordTextFormField extends StatelessWidget {
   const PasswordTextFormField({
-    Key key,
+    Key? key,
     this.style,
     this.decoration,
   }) : super(key: key);
 
-  final TextStyle style;
-  final InputDecoration decoration;
+  final TextStyle? style;
+  final InputDecoration? decoration;
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +51,13 @@ class PasswordTextFormField extends StatelessWidget {
 
 class EmailTextFormField extends StatelessWidget {
   const EmailTextFormField({
-    Key key,
+    Key? key,
     this.style,
     this.decoration,
   }) : super(key: key);
 
-  final TextStyle style;
-  final InputDecoration decoration;
+  final TextStyle? style;
+  final InputDecoration? decoration;
 
   @override
   Widget build(BuildContext context) {

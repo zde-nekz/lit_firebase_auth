@@ -17,16 +17,16 @@ const double defaultFontSize = 16.0;
 /// `context.signInWithGoogle();` in the [onPressed] handler
 class SignInWithGoogleButton extends StatelessWidget {
   const SignInWithGoogleButton({
-    Key key,
-    this.config,
+    Key? key,
+    required this.config,
   }) : super(key: key);
 
-  final ButtonConfig config;
+  final ButtonConfig? config;
 
   static const String defaultLabel = 'Continue with Google';
 
   /// Returns a dark version of the sign in with Google button
-  factory SignInWithGoogleButton.dark({Key key, Widget label}) {
+  factory SignInWithGoogleButton.dark({Key? key, Widget? label}) {
     return SignInWithGoogleButton(
       key: key,
       config: ButtonConfig.raisedIcon(
@@ -53,7 +53,7 @@ class SignInWithGoogleButton extends StatelessWidget {
   }
 
   /// Returns a light version of the sign in with Google button
-  factory SignInWithGoogleButton.light({Key key, Widget label}) {
+  factory SignInWithGoogleButton.light({Key? key, Widget? label}) {
     return SignInWithGoogleButton(
       key: key,
       config: ButtonConfig.raisedIcon(
@@ -100,16 +100,16 @@ class SignInWithGoogleButton extends StatelessWidget {
 /// `context.signInWithApple();` in the [onPressed] handler
 class SignInWithAppleButton extends StatelessWidget {
   const SignInWithAppleButton({
-    Key key,
-    this.config,
+    Key? key,
+    required this.config,
   }) : super(key: key);
 
-  final ButtonConfig config;
+  final ButtonConfig? config;
 
   static const String defaultLabel = 'Continue with Apple';
 
   /// Returns a dark version of the sign in with Apple button
-  factory SignInWithAppleButton.dark({Key key, Widget label}) {
+  factory SignInWithAppleButton.dark({Key? key, Widget? label}) {
     return SignInWithAppleButton(
       key: key,
       config: ButtonConfig.raisedIcon(
@@ -128,7 +128,7 @@ class SignInWithAppleButton extends StatelessWidget {
   }
 
   /// Returns a light version of the sign in with Apple button
-  factory SignInWithAppleButton.light({Key key, Widget label}) {
+  factory SignInWithAppleButton.light({Key? key, Widget? label}) {
     return SignInWithAppleButton(
       key: key,
       config: ButtonConfig.raisedIcon(
@@ -176,11 +176,11 @@ class SignInWithAppleButton extends StatelessWidget {
 /// `context.signInWithGithub();` in the [onPressed] handler
 class SignInWithGithubButton extends StatelessWidget {
   const SignInWithGithubButton({
-    Key key,
-    this.config,
+    Key? key,
+    required this.config,
   }) : super(key: key);
 
-  final ButtonConfig config;
+  final ButtonConfig? config;
 
   static const String defaultLabel = 'Continue with Github';
 
@@ -214,12 +214,12 @@ class SignInWithGithubButton extends StatelessWidget {
 /// `context.signInWithTwitter();` in the [onPressed] handler
 class SignInWithTwitterButton extends StatelessWidget {
   const SignInWithTwitterButton({
-    Key key,
-    this.config,
+    Key? key,
+    required this.config,
   }) : super(key: key);
 
   // final ButtonConfig config;
-  final ButtonConfig config;
+  final ButtonConfig? config;
 
   static const String defaultLabel = 'Continue with Twitter';
 
@@ -253,11 +253,11 @@ class SignInWithTwitterButton extends StatelessWidget {
 /// `context.signInAnonymously();` in the [onPressed] handler
 class SignInAnonymouslyButton extends StatelessWidget {
   const SignInAnonymouslyButton({
-    Key key,
-    this.config,
+    Key? key,
+    required this.config,
   }) : super(key: key);
 
-  final ButtonConfig config;
+  final ButtonConfig? config;
 
   static const String defaultLabel = 'Continue Anonymously';
 
@@ -293,11 +293,11 @@ class SignInAnonymouslyButton extends StatelessWidget {
 /// `context.signInWithEmailAndPassword();` in the [onPressed] handler
 class EmailAndPasswordSignInButton extends StatelessWidget {
   const EmailAndPasswordSignInButton({
-    Key key,
-    this.config,
+    Key? key,
+    required this.config,
   }) : super(key: key);
 
-  final ButtonConfig config;
+  final ButtonConfig? config;
 
   static const Widget defaultChild = Text('SIGN IN');
 
@@ -327,11 +327,11 @@ class EmailAndPasswordSignInButton extends StatelessWidget {
 /// `context.registerWithEmailAndPassword();` in the [onPressed] handler
 class EmailAndPasswordRegisterButton extends StatelessWidget {
   const EmailAndPasswordRegisterButton({
-    Key key,
-    this.config,
+    Key? key,
+    required this.config,
   }) : super(key: key);
 
-  final ButtonConfig config;
+  final ButtonConfig? config;
 
   static const Widget defaultChild = Text('REGISTER');
 
@@ -354,17 +354,17 @@ class EmailAndPasswordRegisterButton extends StatelessWidget {
 
 class _SignInButton extends StatelessWidget {
   const _SignInButton({
-    Key key,
-    @required this.config,
-    @required this.onPressed,
+    Key? key,
+    required this.config,
+    required this.onPressed,
   }) : super(key: key);
 
-  final ButtonConfig config;
+  final ButtonConfig? config;
   final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return config.map(
+    return config!.map(
       raised: (button) => _RaisedSignInButton(
         button: button,
         onPressed: onPressed,
@@ -387,12 +387,10 @@ class _SignInButton extends StatelessWidget {
 
 class _RaisedSignInButton extends StatelessWidget {
   const _RaisedSignInButton({
-    Key key,
-    @required this.button,
-    @required this.onPressed,
-  })  : assert(button != null),
-        assert(onPressed != null),
-        super(key: key);
+    Key? key,
+    required this.button,
+    required this.onPressed,
+  })  : super(key: key);
 
   final ButtonConfigRaised button;
   final VoidCallback onPressed;
@@ -411,12 +409,10 @@ class _RaisedSignInButton extends StatelessWidget {
 
 class _RaisedIconSignInButton extends StatelessWidget {
   const _RaisedIconSignInButton({
-    Key key,
-    @required this.button,
-    @required this.onPressed,
-  })  : assert(button != null),
-        assert(onPressed != null),
-        super(key: key);
+    Key? key,
+    required this.button,
+    required this.onPressed,
+  })  : super(key: key);
 
   final ButtonConfigRaisedIcon button;
   final VoidCallback onPressed;
@@ -437,12 +433,10 @@ class _RaisedIconSignInButton extends StatelessWidget {
 
 class _FlatSignInButton extends StatelessWidget {
   const _FlatSignInButton({
-    Key key,
-    @required this.button,
-    @required this.onPressed,
-  })  : assert(button != null),
-        assert(onPressed != null),
-        super(key: key);
+    Key? key,
+    required this.button,
+    required this.onPressed,
+  })  : super(key: key);
 
   final ButtonConfigFlat button;
   final VoidCallback onPressed;
@@ -461,12 +455,10 @@ class _FlatSignInButton extends StatelessWidget {
 
 class _FlatIconSignInButton extends StatelessWidget {
   const _FlatIconSignInButton({
-    Key key,
-    @required this.button,
-    @required this.onPressed,
-  })  : assert(button != null),
-        assert(onPressed != null),
-        super(key: key);
+    Key? key,
+    required this.button,
+    required this.onPressed,
+  })  : super(key: key);
 
   final ButtonConfigFlatIcon button;
   final VoidCallback onPressed;
@@ -487,12 +479,12 @@ class _FlatIconSignInButton extends StatelessWidget {
 
 class _IconWrapper extends StatelessWidget {
   const _IconWrapper({
-    Key key,
-    @required this.buttonHeight,
+    Key? key,
+    required this.buttonHeight,
     this.child,
   }) : super(key: key);
   final double buttonHeight;
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -506,8 +498,8 @@ class _IconWrapper extends StatelessWidget {
 
 class _ContinueWithLabel extends StatelessWidget {
   const _ContinueWithLabel({
-    Key key,
-    @required this.label,
+    Key? key,
+    required this.label,
   }) : super(key: key);
 
   final String label;

@@ -27,8 +27,8 @@ class TextFieldConfig {
   final InputDecoration inputDecoration;
 
   TextFieldConfig({
-    this.style,
-    this.inputDecoration,
+    required this.style,
+    required this.inputDecoration,
   });
 }
 
@@ -37,22 +37,22 @@ class TextFieldConfig {
 /// Specify different button types. For example [ButtonConfig.raised()]
 abstract class ButtonConfig with _$ButtonConfig {
   const factory ButtonConfig.raised({
-    @required ButtonThemeData themedata,
-    @required Widget child,
+    required ButtonThemeData themedata,
+    required Widget child,
   }) = ButtonConfigRaised;
   const factory ButtonConfig.flat({
-    @required ButtonThemeData themedata,
-    @required Widget child,
+    required ButtonThemeData themedata,
+    required Widget child,
   }) = ButtonConfigFlat;
   const factory ButtonConfig.flatIcon({
-    @required ButtonThemeData themedata,
-    @required Widget icon,
-    @required Widget child,
+    required ButtonThemeData themedata,
+    required Widget icon,
+    required Widget child,
   }) = ButtonConfigFlatIcon;
   const factory ButtonConfig.raisedIcon({
-    @required ButtonThemeData themedata,
-    @required Widget icon,
-    @required Widget child,
+    required ButtonThemeData themedata,
+    required Widget icon,
+    required Widget child,
   }) = ButtonConfigRaisedIcon;
 }
 

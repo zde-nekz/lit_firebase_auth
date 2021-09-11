@@ -11,11 +11,11 @@ import 'widgets/sign_in_text_fields.dart';
 
 class StandardSignInWidget extends StatelessWidget {
   const StandardSignInWidget({
-    Key key,
+    Key? key,
     this.config,
   }) : super(key: key);
 
-  final AuthConfig config;
+  final AuthConfig? config;
 
   static const maxWidth = 500.0;
 
