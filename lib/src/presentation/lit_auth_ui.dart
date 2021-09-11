@@ -175,7 +175,7 @@ class LitAuth extends StatelessWidget {
     NotificationConfig? errorNotification,
     NotificationConfig? successNotification,
     TransitionBuilder? builder,
-    Widget child,
+    required Widget child,
   }) = _LitAuthCustom;
 
   @override
@@ -215,7 +215,7 @@ class _SignInBuilder extends StatelessWidget {
     authFailureOrSuccessOption.fold(
       () => () {}, // don't do anything, no auth request has been made
       (auth) {
-        auth?.map(
+        auth.map(
           success: (_) {
             if (onAuthSuccess != null) {
               WidgetsBinding.instance!
@@ -230,6 +230,7 @@ class _SignInBuilder extends StatelessWidget {
                     .show(context);
               },
             );
+            return Auth.success();
           },
           failure: (f) {
             if (onAuthFailure != null) {
@@ -253,6 +254,7 @@ class _SignInBuilder extends StatelessWidget {
                         'Too many unsuccessful login attempts. Please try again later'),
               ).show(context),
             );
+            return Auth.failure(f);
           },
         );
       },
@@ -277,7 +279,7 @@ class _SignInBuilder extends StatelessWidget {
         if (builder != null) {
           return builder!(context, child);
         }
-        return child;
+        return child!;
       },
     );
   }
