@@ -17,11 +17,8 @@ class SignInForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final showErrorMessages = context.select(
-      (SignInHandlerState state) => state.showErrorMessages,
-    );
     return Form(
-      autovalidate: showErrorMessages,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       child: child,
     );
   }
