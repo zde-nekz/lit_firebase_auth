@@ -18,7 +18,7 @@ dependencies:
   firebase_auth_oauth: ^1.0.3
   # annotation
   meta: ^1.1.8
-  freezed_annotation: ^0.14.2
+  freezed_annotation: ^1.1.0
   # state
   dartz: ^0.10.0
   provider: ^6.0.0
