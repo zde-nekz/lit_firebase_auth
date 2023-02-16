@@ -426,7 +426,6 @@ class _RaisedIconSignInButton extends StatelessWidget {
     return ButtonTheme.fromButtonThemeData(
       data: button.themedata,
       child: ElevatedButton.icon(
-        padding: const EdgeInsets.only(right: 8),
         onPressed: onPressed,
         icon: button.icon,
         label: button.child,
@@ -476,7 +475,6 @@ class _FlatIconSignInButton extends StatelessWidget {
     return ButtonTheme.fromButtonThemeData(
       data: button.themedata,
       child: TextButton.icon(
-        padding: const EdgeInsets.only(right: 8),
         onPressed: onPressed,
         icon: button.icon,
         label: button.child,
