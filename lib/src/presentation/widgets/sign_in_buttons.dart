@@ -355,8 +355,8 @@ class EmailAndPasswordRegisterButton extends StatelessWidget {
 class _SignInButton extends StatelessWidget {
   const _SignInButton({
     Key key,
-    @required this.config,
-    @required this.onPressed,
+    this.config,
+    this.onPressed,
   }) : super(key: key);
 
   final ButtonConfig config;
@@ -388,8 +388,8 @@ class _SignInButton extends StatelessWidget {
 class _RaisedSignInButton extends StatelessWidget {
   const _RaisedSignInButton({
     Key key,
-    @required this.button,
-    @required this.onPressed,
+    this.button,
+    this.onPressed,
   })  : assert(button != null),
         assert(onPressed != null),
         super(key: key);
@@ -401,7 +401,7 @@ class _RaisedSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ButtonTheme.fromButtonThemeData(
       data: button.themedata,
-      child: RaisedButton(
+      child: ElevatedButton(
         onPressed: onPressed,
         child: button.child,
       ),
@@ -412,8 +412,8 @@ class _RaisedSignInButton extends StatelessWidget {
 class _RaisedIconSignInButton extends StatelessWidget {
   const _RaisedIconSignInButton({
     Key key,
-    @required this.button,
-    @required this.onPressed,
+    this.button,
+    this.onPressed,
   })  : assert(button != null),
         assert(onPressed != null),
         super(key: key);
@@ -425,7 +425,7 @@ class _RaisedIconSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ButtonTheme.fromButtonThemeData(
       data: button.themedata,
-      child: RaisedButton.icon(
+      child: ElevatedButton.icon(
         padding: const EdgeInsets.only(right: 8),
         onPressed: onPressed,
         icon: button.icon,
@@ -438,8 +438,8 @@ class _RaisedIconSignInButton extends StatelessWidget {
 class _FlatSignInButton extends StatelessWidget {
   const _FlatSignInButton({
     Key key,
-    @required this.button,
-    @required this.onPressed,
+    this.button,
+    this.onPressed,
   })  : assert(button != null),
         assert(onPressed != null),
         super(key: key);
@@ -451,7 +451,7 @@ class _FlatSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ButtonTheme.fromButtonThemeData(
       data: button.themedata,
-      child: FlatButton(
+      child: TextButton(
         onPressed: onPressed,
         child: button.child,
       ),
@@ -462,8 +462,8 @@ class _FlatSignInButton extends StatelessWidget {
 class _FlatIconSignInButton extends StatelessWidget {
   const _FlatIconSignInButton({
     Key key,
-    @required this.button,
-    @required this.onPressed,
+    this.button,
+    this.onPressed,
   })  : assert(button != null),
         assert(onPressed != null),
         super(key: key);
@@ -475,7 +475,7 @@ class _FlatIconSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ButtonTheme.fromButtonThemeData(
       data: button.themedata,
-      child: FlatButton.icon(
+      child: TextButton.icon(
         padding: const EdgeInsets.only(right: 8),
         onPressed: onPressed,
         icon: button.icon,
@@ -488,7 +488,7 @@ class _FlatIconSignInButton extends StatelessWidget {
 class _IconWrapper extends StatelessWidget {
   const _IconWrapper({
     Key key,
-    @required this.buttonHeight,
+    this.buttonHeight,
     this.child,
   }) : super(key: key);
   final double buttonHeight;
@@ -507,7 +507,7 @@ class _IconWrapper extends StatelessWidget {
 class _ContinueWithLabel extends StatelessWidget {
   const _ContinueWithLabel({
     Key key,
-    @required this.label,
+    this.label,
   }) : super(key: key);
 
   final String label;
