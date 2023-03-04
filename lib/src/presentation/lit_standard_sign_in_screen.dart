@@ -1,13 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../domain/auth/auth_providers.dart';
-import 'core/auth_config.dart';
+import '../../lit_firebase_auth.dart';
 import 'widgets/loading.dart';
-import 'widgets/sign_in_buttons.dart';
-import 'widgets/sign_in_form.dart';
-import 'widgets/sign_in_text_fields.dart';
 
 class StandardSignInWidget extends StatelessWidget {
   const StandardSignInWidget({
@@ -83,26 +78,35 @@ class StandardSignInWidget extends StatelessWidget {
             if (authProviders.google)
               Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: config?.googleButton?.map(
-                      (c) => SignInWithGoogleButton(
-                        config: c?.config,
+                child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF4285F4),
+                      padding: EdgeInsets.fromLTRB(1, 1, 8, 1)),
+                  onPressed: context.signInWithGoogle,
+                  icon: Container(
+                      height: defaultButtonHeight - 1,
+                      width: defaultButtonHeight - 1,
+                      margin: const EdgeInsets.all(2),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(2),
+                        color: Colors.white,
                       ),
-                      dark: (c) => SignInWithGoogleButton.dark(label: c?.label),
-                      light: (c) =>
-                          SignInWithGoogleButton.light(label: c?.label),
-                    ) ??
-                    SignInWithGoogleButton.dark(),
+                      child: Center(
+                        child: LitAuthIcon.google(),
+                      )),
+                  label: Text(SignInWithGoogleButton.defaultLabel),
+                ),
               ),
             if (authProviders.apple)
               Padding(
                 padding: const EdgeInsets.all(4.0),
-                child: config?.appleButton?.map(
-                      (c) => SignInWithAppleButton(config: c?.config),
-                      dark: (c) => SignInWithAppleButton.dark(label: c?.label),
-                      light: (c) =>
-                          SignInWithAppleButton.light(label: c?.label),
-                    ) ??
-                    SignInWithAppleButton.dark(),
+                child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        padding: EdgeInsets.fromLTRB(8, 8, 16, 8)),
+                    onPressed: context.signInWithApple,
+                    icon: LitAuthIcon.appleWhite(),
+                    label: Text(SignInWithAppleButton.defaultLabel)),
               ),
             if (authProviders.github)
               Padding(
